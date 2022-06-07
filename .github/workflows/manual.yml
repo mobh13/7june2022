@@ -25,8 +25,7 @@ jobs:
     - run: npm install
 
 
-    - name: Build Yarn and npm
-      uses: linchpin/action-build-yarn-npm@master
+    - run: npm run build
 
 
     - name: ssh-scp-deploy
