@@ -35,10 +35,11 @@ jobs:
       with:
           # Local file path
         local: ./public
-        remote:  ~/madan/public
+        remote:  /home/madan/public
         host: 20.51.253.91
         user: madan
         key: ${{ secrets.SSH_KEY }}  
+        pre_upload: rm -r /home/madan/public
         post_upload: sudo cp -r public/* /var/www/html
         scp_options: -r 
      
