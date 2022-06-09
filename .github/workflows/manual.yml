@@ -33,7 +33,7 @@ jobs:
           dedupe_issues: true
     - name: Build
       if: always()
-    - run: npm run build
+      run: npm run build
 
 
     - name: ssh-scp-deploy
