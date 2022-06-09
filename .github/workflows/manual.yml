@@ -25,15 +25,13 @@ jobs:
         node-version: 16.0
 
     - run: npm install
-    - run: npm audit >> auditresults
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.1.0
+    - uses: oke-py/npm-audit-action@v2
       with:
-        # Artifact name
-        name: 'npm audit results in json'
-        path:  auditresults.json
-    # The desired behavior if no files are 
-      if: always()
+          audit_level: moderate
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_assignees: oke-py
+          issue_labels: vulnerability,test
+          dedupe_issues: true
     - run: npm run build
 
 
