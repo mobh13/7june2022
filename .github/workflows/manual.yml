@@ -31,9 +31,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_labels: vulnerability,test
           dedupe_issues: true
-    -name: Build
-    if: always()
-    -run: npm run build
+    - name: Build
+      if: always()
+    - run: npm run build
 
 
     - name: ssh-scp-deploy
