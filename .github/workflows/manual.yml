@@ -33,6 +33,7 @@ jobs:
         name: 'npm audit results in json'
         path:  auditresults.json
     # The desired behavior if no files are 
+      if: always()
     - run: npm run build
 
 
